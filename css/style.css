@@ -4,8 +4,9 @@ html {
   font-size: 100%;
 }
 body {
-  color: #707070;
-  font-family: sans-serif;
+  background-color: #fdf8f8;
+  color: #333;
+  font-family: 'YuGothic', 'Yu Gothic', sans-serif;
 }
 img {
   max-width: 100%;
@@ -15,179 +16,333 @@ li {
   list-style: none;
 }
 a {
-  color: #707070;
+  color: #333;
   text-decoration: none;
 }
 a:hover {
   opacity: 0.7;
 }
 
-/*-----------------
+/*---------------------
 ヘッダー
------------------*/
-.wrapper {
-  max-width: 1000px;
-  padding: 0 20px;
-  margin: 0 auto;
-}
-
-#header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 35px;
-  padding-bottom: 35px;
-}
+---------------------*/
 #header .logo {
-  max-width: 190px;
+  width: 100%;
+  max-width: 120px;
   line-height: 0;
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  z-index: 50;
 }
 #header .logo a {
   display: block;
 }
-#header .navi {
-  display: flex;
-}
-#header .navi li {
-  font-size: 14px;
-  margin-left: 40px;
-}
 
 @media screen and (max-width: 767px) {
-  #header {
-    padding-top: 25px;
-    padding-bottom: 25px;
-  }
   #header .logo {
-    max-width: 120px;
+    max-width: 85px;
+    top: 20px;
+    left: 20px;
   }
 }
 
-/*-----------------------------------
-メインビジュアルとイントロダクション
------------------------------------*/
-.mainvisual {
-  margin-bottom: 80px;
-}
-.introduction {
-  margin-bottom: 80px;
-  text-align: center;
-}
-.introduction .catchphrase {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 40px;
-}
-.introduction .text {
-  font-size: 14px;
+/* メインビジュアル */
+.mainvisual img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
 }
 
 @media screen and (max-width: 767px) {
-  .mainvisual {
-    margin-bottom: 50px;
-  }
-  .introduction {
-    margin-bottom: 50px;
-  }
-  .introduction .catchphrase {
-    font-size: 16px;
-  }
-  .introduction .text {
-    text-align: left;
+  .mainvisual img {
+    height: 480px;
   }
 }
 
-/*-----------------------
-Profile
------------------------*/
-.section-title {
+/*------------------
+Concept
+------------------*/
+.wrapper {
+  max-width: 1040px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.concept {
+  padding-top: 130px;
+  padding-bottom: 130px;
+  position: relative;
+}
+.concept .img {
+  max-width: 720px;
+}
+.concept .text {
+  max-width: 600px;
+  background-color: rgba(253, 248, 248, 0.8);
+  padding: 40px;
+  position: absolute;
+  top: 325px;
+  right: 0;
+}
+.concept .text .section-title {
+  font-family: 'YuMincho', 'Yu Mincho', serif;
+  font-size: 30px;
   font-weight: normal;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+@media screen and (max-width: 767px) {
+  .concept {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    position: static;
+  }
+  .concept .img {
+    margin-bottom: 30px;
+  }
+  .concept .text {
+    background-color: transparent;
+    padding: 0;
+    position: static;
+  }
+  .concept .text .section-title {
+    font-size: 24px;
+  }
+}
+
+/*------------------
+New Products
+------------------*/
+.new-products {
+  background-color: #f4eaea;
+  padding: 130px 0;
+}
+.new-products .section-title {
+  font-family: 'YuMincho', 'Yu Mincho', serif;
+  font-size: 80px;
+  font-weight: normal;
+  letter-spacing: 0.1rem;
+  line-height: 1.2;
   margin-bottom: 40px;
 }
-.section-title .en {
-  display: block;
-  font-size: 40px;
+.new-products .img-group {
+  height: 890px;
+  position: relative;
 }
-.section-title .ja {
-  display: block;
-  font-size: 14px;
+.new-products .img-group .img1 {
+  max-width: 350px;
+  position: absolute;
+  top: 0;
+  left: 42%;
+  z-index: 30;
 }
-
-#profile {
+.new-products .img-group .img2 {
+  max-width: 400px;
+  position: absolute;
+  top: 250px;
+  left: 8%;
+  z-index: 20;
+}
+.new-products .img-group .img3 {
+  max-width: 480px;
+  position: absolute;
+  top: 570px;
+  left: 40%;
+  z-index: 10;
+}
+.new-products .img-group .circle {
+  width: 90px;
+  height: 90px;
+  background-color: #333;
+  border-radius: 50%;
+  color: #fff;
   display: flex;
   align-items: center;
-  margin-bottom: 120px;
-}
-#profile .img {
-  width: 50%;
-}
-#profile .detail {
-  width: 50%;
-  padding-left: 80px;
-}
-#profile .detail p {
-  font-size: 14px;
-  line-height: 2;
+  justify-content: center;
+  position: absolute;
+  top: -45px;
+  right: -13%;
+  z-index: 40;
 }
 
 @media screen and (max-width: 767px) {
-  .section-title {
-    margin-bottom: 25px;
+  .new-products {
+    padding: 40px 0;
   }
-  .section-title .en {
-    font-size: 32px;
+  .new-products .section-title {
+    font-size: 40px;
+    margin-bottom: 30px;
   }
-
-  #profile {
-    flex-direction: column-reverse;
-    margin-bottom: 60px;
+  .new-products .img-group {
+    height: auto;
+    position: static;
   }
-  #profile .img {
-    width: 100%;
+  .new-products .img-group .img1 {
+    margin: 0 auto 20px;
+    position: relative;
+    top: auto;
+    left: auto;
   }
-  #profile .detail {
-    width: 100%;
-    padding-left: 0;
-    margin-bottom: 20px;
+  .new-products .img-group .img2 {
+    margin: 0 auto 20px;
+    position: static;
+  }
+  .new-products .img-group .img3 {
+    margin: 0 auto;
+    position: static;
+  }
+  .new-products .img-group .circle {
+    width: 70px;
+    height: 70px;
+    font-size: 16px;
+    top: -13px;
+    right: -13px;
   }
 }
 
-/*-----------------------
-Works
------------------------*/
-#works {
-    margin-bottom: 120px;
-  }
-#works .works-list {
+/*----------------
+New Type
+----------------*/
+.new-type {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
+  padding: 130px 0;
 }
-#works .works-list li {
-  width: 32%;
-  margin: 0 2% 2% 0;
+.new-type .text {
+  width: 50%;
 }
-#works .works-list li:nth-child(3n) {
-  margin-right: 0;
+.new-type .text .text-inner {
+  max-width: 520px;
+  padding: 0 60px 0 20px;
+  margin-left: auto;
+}
+.new-type .text .section-title {
+  font-family: 'YuMincho', 'Yu Mincho', serif;
+  font-size: 30px;
+  font-weight: normal;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.new-type .text .description {
+  font-size: 15px;
+  line-height: 1.8;
+  text-align: justify;
+}
+.new-type .img {
+  width: 50%;
+}
+.new-type .img img {
+  height: 480px;
+  object-fit: cover;
+  object-position: left;
 }
 
 @media screen and (max-width: 767px) {
-  #works {
-    margin-bottom: 60px;
-  }
-  #works .works-list {
+  .new-type {
     flex-direction: column;
+    padding: 40px 20px;
   }
-  #works .works-list li {
+  .new-type .text {
     width: 100%;
-    margin: 0 0 20px;
+    margin-bottom: 30px;
+  }
+  .new-type .text .text-inner {
+    max-width: 100%;
+    padding: 0;
+  }
+  .new-type .text .section-title {
+    font-size: 24px;
+  }
+  .new-type .img {
+    width: 100%;
+  }
+  .new-type .img img {
+    height: auto;
+    object-fit: contain;
   }
 }
 
-/*----------------------
-フッター
-----------------------*/
-#footer {
-  font-size: 12px;
-  padding-bottom: 20px;
+/* ---------------
+Online Store
+----------------*/
+.online-store {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../img/bg.jpg);
+  background-color: rgba(255, 255, 255, 0.5);
+  background-blend-mode: lighten;
+  background-position: center top;
+  background-size: cover;
+}
+.online-store .box {
+  width: 100%;
+  max-width: 500px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 50px 0;
   text-align: center;
+}
+.online-store .box .title {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+.online-store .box .btn {
+  background-color: #fff;
+  display: inline-block;
+  padding: 10px 30px;
+  position: relative;
+}
+.online-store .box .btn::after {
+  content: "";
+  width: 40px;
+  height: 1px;
+  background-color: #333;
+  position: absolute;
+  top: 20px;
+  right: -20px;
+}
+
+@media screen and (max-width: 767px) {
+  .online-store {
+    height: auto;
+    padding: 20px;
+  }
+  .online-store .box .title {
+    font-size: 24px;
+  }
+}
+
+/*------------------------
+フッター
+------------------------*/
+#footer {
+  background-color: #666;
+  padding: 30px 0;
+}
+#footer .inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#footer .logo {
+  max-width: 130px;
+}
+#footer .copyright {
+  color: #fff;
+  font-size: 12px;
+}
+
+@media screen and (max-width: 767px) {
+  #footer {
+    padding: 15px 0;
+  }
+  #footer .logo {
+    max-width: 80px;
+  }
 }
